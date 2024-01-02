@@ -2,9 +2,9 @@
 #include <ctime>
 using namespace std;
 
-int* distributeCard(int usercount, int cardNum[], int releasedCount){//die를 안하고 살아있는 사람수, 현재 배분된 카드 정보를 넘겨받고, 배분된 카드가 없으면 배열값 이전이 안되니까 상관없을듯
+int* distributeCard(int usercount, int cardNum[], int releasedCount){//die를 안하고 살아있는 사람수, 현재 배분된 카드 정보, 얼마나 나눠줬는지를 넘겨받고, 배분된 카드가 없으면 배열값 이전이 안되니까 상관없을듯
     const int card[20]={2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71};//1~10 월별 카드 2장씩 차례로 1-1,1-2,2-1,2-2...9-1,9-2,10-1,10-2에 대응하는 값, 바뀌면 안됨
-    int checkDup[10]={0,};//우선 5명까지 카드 분배하는데 중복검사
+    int checkDup[10]={0,};//우선 5명까지 카드 분배하는데 중복검사 및 저장용 배열
     int cardCount = 0;
     int checkCount;
     int tmpnum;
